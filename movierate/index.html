@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <main class="main">
+        <h1 class="center">Movie Ratings</h1>
+      <div>
+        <form class="form">
+          <label for="movTit">Title:</label>
+          <input type="text"  id="movtit" placeholder = "enter your title"/><br />
+          <label for="movRat">Rating:</label>
+          <input type="text"  id="movrat" placeholder = "enter your rating"/><br />
+          <input type="submit" id="submit" value="Submit Rating:" /><br />
+        </form>
+      </div>
+        <div id="location"></div>
+      </main>
+      <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+      <script>
+      $("#submit").on("click", function(e) {
+        e.preventDefault();
+       
+        let total = $("#location").append(`<div class="total"> </div>`)
+        let title = $('.total').append('<div class =tit></div>')
+        let rating = $('.total').append('<div class =ing></div>')
+            title.append($("input").eq(0).val())
+            rating.append( $('input').eq(1).val())
+            let btn = $('.total').append('<button> Delete </button>')
+                $('button').on('click', function(){
+                    $('.total').remove()
+})
+});
+      
+      </script>
+</body>
+</html>
